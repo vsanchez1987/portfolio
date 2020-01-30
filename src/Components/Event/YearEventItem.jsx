@@ -14,12 +14,14 @@ import {
     yearsEmployed: "2019 - 2020",
     role: "Front End Web Engineer",
     yearsNum: 1,
-    color: "#DD3D01"
+    eventColor: "#DD3D01"
  */
 
-const YearEventItem = ({ events: { yearsEmployed, company, role } }) => {
+const YearEventItem = ({
+  events: { yearsEmployed, company, role, eventColor, yearsNum, id }
+}) => {
   return (
-    <YearListItem>
+    <YearListItem eventColor={eventColor} yearsNum={yearsNum} id={id}>
       <YearStyle>{yearsEmployed}</YearStyle>
       <CompanyStyle>{company}</CompanyStyle>
       <RoleStyle>{role}</RoleStyle>

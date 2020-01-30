@@ -4,9 +4,6 @@ import { EventListItem } from "./EventDate.style";
 
 const yearsActive = [
   {
-    year: "2012"
-  },
-  {
     year: "2013"
   },
   {
@@ -16,19 +13,22 @@ const yearsActive = [
     year: "2015"
   },
   {
-    year: "2016"
+    year: "2015 - 2016"
   },
   {
     year: "2017"
   },
   {
-    year: "2018"
-  },
-  {
-    year: "2019"
+    year: "2018 - 2019"
   },
   {
     year: "2020"
+  },
+  {
+    year: "2021"
+  },
+  {
+    year: "2022"
   }
 ];
 

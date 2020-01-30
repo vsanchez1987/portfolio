@@ -13,6 +13,11 @@ import EventItem from "./YearEventItem";
 
 const timelineData = [
   {
+    yearsNum: 3,
+    eventColor: "#c2e34e"
+  },
+  {
+    id: 1,
     company: "Cog1",
     city: "San Francisco",
     monthStart: "January",
@@ -20,9 +25,10 @@ const timelineData = [
     yearsEmployed: "2015-2015",
     role: "Web Developer",
     yearsNum: 1,
-    color: "#ff9704"
+    eventColor: "#ff9704"
   },
   {
+    id: 2,
     company: "Incentive Networks, Affinion Group",
     city: "San Carlos",
     monthStart: "April",
@@ -30,24 +36,25 @@ const timelineData = [
     yearsEmployed: "2016 - 2018",
     role: "Front End Web Engineer",
     yearsNum: 2,
-    color: "#56C2F3"
+    eventColor: "#56C2F3"
   },
   {
+    id: 3,
     company: "Postman",
     city: "San Francisco",
     monthStart: "January",
     monthEnd: "January",
     yearsEmployed: "2019 - 2020",
     role: "Front End Web Engineer",
-    yearsNum: 1,
-    color: "#DD3D01"
+    yearsNum: 4,
+    eventColor: "#DD3D01"
   }
 ];
 
 class EventDate extends Component {
   render() {
     const eventItem = timelineData.map(event => {
-      return <EventItem events={event} key={event.company} />;
+      return <EventItem events={event} key={event.id} />;
     });
     return <EventUlComponentStyled>{eventItem}</EventUlComponentStyled>;
   }

@@ -1,20 +1,30 @@
 import styles, { css } from "styled-components";
 
 const yearsLength = 160;
+let beforeSeperation = -32;
+let afterSeperation = 16;
 
 const listItemDefault = {
   default: css`
     &:before {
       position: absolute;
       left: 0;
-      bottom: -36px;
+      bottom: ${beforeSeperation}px;
       height: 8px;
       border-radius: 8px;
-      width: ${yearsLength}px;
+      width: ${props =>
+        props.yearsNum
+          ? props.yearsNum * yearsLength + "px"
+          : yearsLength + "px"};
       content: "";
     }
     position: relative;
-    width: ${yearsLength}px;
+    bottom: ${props =>
+      props.id ? (afterSeperation += 16) + "px" : (afterSeperation = 0) + "px"};
+    width: ${props =>
+      props.yearsNum
+        ? props.yearsNum * yearsLength + "px"
+        : yearsLength + "px"};
     display: inline-block;
   `
 };
@@ -28,18 +38,10 @@ const headerDefaults = {
 };
 
 export const YearListItem = styles.li`
-  // &:before {
-  //   position: absolute;
-  //   left: 0;
-  //   bottom: -36px;
-  //   height: 8px;
-  //   border-radius: 8px;
-  //   content: "";
-  //   background: #ff9704;
-  // }
+
   ${listItemDefault.default}
     &:before{
-      background: #ff9704;
+      background: ${props => (props.eventColor ? props.eventColor : "#e74c3c")};
     }
 
 `;
