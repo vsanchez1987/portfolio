@@ -46,11 +46,10 @@ const timelineData = [
 
 class EventDate extends Component {
   render() {
-    return (
-      <EventUlComponentStyled>
-        <EventItem timelineData={timelineData} />
-      </EventUlComponentStyled>
-    );
+    const eventItem = timelineData.map(event => {
+      return <EventItem events={event} key={event.company} />;
+    });
+    return <EventUlComponentStyled>{eventItem}</EventUlComponentStyled>;
   }
 }
 

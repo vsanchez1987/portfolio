@@ -17,17 +17,14 @@ import {
     color: "#DD3D01"
  */
 
-const YearEventItem = props => {
-  console.log(props);
-  return this.props.timelineData.map(timeEvent => {
-    return (
-      <YearListItem>
-        <YearStyle>{timeEvent.yearsEmployed}</YearStyle>
-        <CompanyStyle>{timeEvent.company}</CompanyStyle>
-        <RoleStyle>{timeEvent.role}</RoleStyle>
-      </YearListItem>
-    );
-  });
+const YearEventItem = ({ events: { yearsEmployed, company, role } }) => {
+  return (
+    <YearListItem>
+      <YearStyle>{yearsEmployed}</YearStyle>
+      <CompanyStyle>{company}</CompanyStyle>
+      <RoleStyle>{role}</RoleStyle>
+    </YearListItem>
+  );
 };
 
 export default YearEventItem;

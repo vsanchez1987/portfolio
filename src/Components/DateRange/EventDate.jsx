@@ -34,7 +34,7 @@ const yearsActive = [
 
 const EventDate = () => {
   return yearsActive.map(years => {
-    return <EventListItem>{years.year}</EventListItem>;
+    return <EventListItem key={years.year}>{years.year}</EventListItem>;
   });
 };
 
